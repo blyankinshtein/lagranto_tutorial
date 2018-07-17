@@ -1,7 +1,7 @@
 def download_ERAi(date_str, hour_str):
     from ecmwfapi import ECMWFDataServer
     server = ECMWFDataServer()
-    server.retrieve({
+    server.retrieve({ #required download of wind profile
         "class": "ei",
         "dataset": "interim",
         "date": date_str+"/to/"+date_str,
@@ -33,23 +33,23 @@ def download_ERAi(date_str, hour_str):
         "type": "an",
         "target": "erai/moisture-"+date_str+"-"+hour_str,
     })
-    server.retrieve({ #optional download of geopotential profile, e.g. for thickness computation
-        "class": "ei",
-        "dataset": "interim",
-        "date": date_str+"/to/"+date_str,
-        "expver": "1",
-        "grid": "1.0/1.0",
-	"format": "netcdf",
-        "levelist": "500/700/850/1000",
-        "levtype": "pl", #pressure levels
-        "param": "129.128",
-        "step": "0",
-        "stream": "oper",
-        "time": hour_str+":00:00",
-        "type": "an",
-        "target": "erai/geopotential-"+date_str+"-"+hour_str,
-    })
-    server.retrieve({
+#   server.retrieve({ #optional download of geopotential profile, e.g. for thickness computation
+#	"class": "ei",
+#	"dataset": "interim",
+#	"date": date_str+"/to/"+date_str,
+#	"expver": "1",
+#	"grid": "1.0/1.0",
+#	"format": "netcdf",
+#	"levelist": "500/700/850/1000",
+#	"levtype": "pl", #pressure levels
+#	"param": "129.128",
+#	"step": "0",
+#	"stream": "oper",
+#	"time": hour_str+":00:00",
+#	"type": "an",
+#	"target": "erai/geopotential-"+date_str+"-"+hour_str,
+#   })
+    server.retrieve({ #required download
         "class": "ei",
         "dataset": "interim",
         "date": date_str+"/to/"+date_str,
@@ -65,7 +65,7 @@ def download_ERAi(date_str, hour_str):
         "type": "an",
         "target": "erai/lnsp-"+date_str+"-"+hour_str,
     })
-    server.retrieve({
+    server.retrieve({ # required download
         "class": "ei",
         "dataset": "interim",
         "date": date_str+"/to/"+date_str,
@@ -73,7 +73,7 @@ def download_ERAi(date_str, hour_str):
         "grid": "1.0/1.0",
         "format": "netcdf",
         "levtype": "sfc", #surface (1 level)
-        "param": "134.128",
+        "param": "134.128", #surface pressure
         "step": "0",
         "stream": "oper",
         "time": hour_str+":00:00",
