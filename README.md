@@ -1,7 +1,7 @@
 # Lagranto tutorial
 A detailed example of lagranto.ecmwf use for identifying warm conveyor belts. 
 
-Based on Lagranto Documentation (Release 0.1) by Nicolas Piaget available at https://media.readthedocs.org/pdf/lagranto/latest/lagranto.pdf.
+Based on Lagranto Documentation (Release 0.1) by Nicolas Piaget available at https://media.readthedocs.org/pdf/lagranto/latest/lagranto.pdf and Lagranto Tutorial by Michael Sprenger and Heini Wernli available at http://iacweb.ethz.ch/staff//sprenger/lagranto/tutorial/Lagranto-Tutorial.pdf.
 
 This repository includes scripts for:
 
